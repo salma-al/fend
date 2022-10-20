@@ -50,6 +50,9 @@ for (let i = 1; i <= sections.length; i++) {
   navbarUl.appendChild(newLi); // append anchors to the navbar
 }
 
+// Smooth scrolling
+document.documentElement.style.scrollBehavior = 'smooth';
+
 // Add class 'active' to section when near top of viewport
 // Set sections as active
 
