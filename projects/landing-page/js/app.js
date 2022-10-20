@@ -42,6 +42,13 @@ const sections = document.querySelectorAll('section');
  */
 
 // build the nav
+for (let i = 1; i <= sections.length; i++) {
+  const newLi = document.createElement('Li');
+  newLi.innerHTML = `<a href="#section${i}" class="menu__link">section ${[
+    i,
+  ]}</a>`; // added the anchor tag to the list and linked each tag with its section
+  navbarUl.appendChild(newLi); // append anchors to the navbar
+}
 
 // Add class 'active' to section when near top of viewport
 
