@@ -23,17 +23,22 @@
  *
  */
 const navbarUl = document.querySelector('#navbar__list');
-const sectionId = document.querySelector('#section1');
-const sectionTitles = sectionId.dataset.nav;
-// const sections = document.querySelectorAll('[data-nav]');
-const activeClass = document.querySelector('.your-active-class');
 const sections = document.querySelectorAll('section');
-
+const topBtn = document.querySelector('.top-btn');
 /**
  * End Global Variables
  * Start Helper Functions
  *
  */
+
+// Scroll back to top button
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 100) {
+    topBtn.classList.add('active');
+  } else {
+    topBtn.classList.remove('active');
+  }
+});
 
 /**
  * End Helper Functions
