@@ -51,6 +51,32 @@ for (let i = 1; i <= sections.length; i++) {
 }
 
 // Add class 'active' to section when near top of viewport
+// Set sections as active
+
+// Create intersection observer
+const callback = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('your-active-class');
+    } else {
+      entry.target.classList.remove('your-active-class');
+    }
+  });
+};
+
+// set options for the observer
+const options = {
+  root: null,
+  threshold: 0.5,
+};
+
+// creating the intersection observer, and passing it the callback function and options object
+const observer = new IntersectionObserver(callback, options);
+
+// target the observer
+sections.forEach((section) => {
+  observer.observe(section);
+});
 
 // Scroll to anchor ID using scrollTO event
 
@@ -63,5 +89,3 @@ for (let i = 1; i <= sections.length; i++) {
 // Build menu
 
 // Scroll to section on link click
-
-// Set sections as active
