@@ -15,4 +15,5 @@ For specific, detailed instructions, look at the project instructions in the Uda
 ## Attributes
 
 [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+
 [Window.pageYOffset](https://developer.mozilla.org/en-US/docs/Web/API/Window/pageYOffset)
