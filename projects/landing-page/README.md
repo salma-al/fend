@@ -20,4 +20,4 @@ For specific, detailed instructions, look at the project instructions in the Uda
 
 [Link navbar to section](https://jsfiddle.net/arsenlol/Ls3f2ujq/54/)
 
-[Scroll to top button](https://fontawesome.com/)
+[Scroll to top button icon](https://fontawesome.com/)
