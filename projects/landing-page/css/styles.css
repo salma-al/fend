@@ -255,5 +255,5 @@ section.your-active-class .landing__container::after {
 
 .top-btn.active {
   pointer-events: auto;
-  opacity: 0.9;
+  opacity: 1;
 }

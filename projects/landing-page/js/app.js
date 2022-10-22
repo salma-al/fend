@@ -47,18 +47,17 @@ window.addEventListener('scroll', () => {
  *
  */
 // build the nav
-
 for (let i = 1; i <= sections.length; i++) {
   const newLi = document.createElement('Li');
   newLi.innerHTML = `<a class="menu__link" href="#section${i}">section ${[
     i,
   ]}</a>`; // added the anchor tag to the list and linked each tag with its section
-  // Build menu
+
   navbarUl.appendChild(newLi); // append anchors to the navbar
 }
 
-// Scroll to anchor ID using scrollIntoView event
 // Scroll to section on link click
+// Scroll to anchor ID using scrollIntoView event
 const anchors = document.querySelectorAll('header nav a');
 
 console.log(anchors);
@@ -69,6 +68,7 @@ anchors.forEach(function (a) {
     const linkSection = document.querySelector(att);
     console.log(event);
     linkSection.scrollIntoView({ behavior: 'smooth' });
+    // window.scrollTo(0, linkSection.offsetTop);
   });
 });
 
@@ -99,3 +99,9 @@ const observer = new IntersectionObserver(callback, options);
 sections.forEach((section) => {
   observer.observe(section);
 });
+
+/**
+ * End Main Functions
+ * Begin Events
+ *
+ */

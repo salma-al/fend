@@ -17,3 +17,7 @@ For specific, detailed instructions, look at the project instructions in the Uda
 [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
 
 [Window.pageYOffset](https://developer.mozilla.org/en-US/docs/Web/API/Window/pageYOffset)
+
+[Link navbar to section](https://jsfiddle.net/arsenlol/Ls3f2ujq/54/)
+
+[Scroll to top button](https://fontawesome.com/)
