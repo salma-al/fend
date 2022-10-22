@@ -25,6 +25,7 @@
 const navbarUl = document.querySelector('#navbar__list');
 const sections = document.querySelectorAll('section');
 const topBtn = document.querySelector('.top-btn');
+
 /**
  * End Global Variables
  * Start Helper Functions
@@ -45,18 +46,31 @@ window.addEventListener('scroll', () => {
  * Begin Main Functions
  *
  */
-
 // build the nav
+
 for (let i = 1; i <= sections.length; i++) {
   const newLi = document.createElement('Li');
-  newLi.innerHTML = `<a href="#section${i}" class="menu__link">section ${[
+  newLi.innerHTML = `<a class="menu__link" href="#section${i}">section ${[
     i,
   ]}</a>`; // added the anchor tag to the list and linked each tag with its section
+  // Build menu
   navbarUl.appendChild(newLi); // append anchors to the navbar
 }
 
-// Smooth scrolling
-document.documentElement.style.scrollBehavior = 'smooth';
+// Scroll to anchor ID using scrollIntoView event
+// Scroll to section on link click
+const anchors = document.querySelectorAll('header nav a');
+
+console.log(anchors);
+anchors.forEach(function (a) {
+  a.addEventListener('click', function (event) {
+    event.preventDefault();
+    const att = event.target.getAttribute('href');
+    const linkSection = document.querySelector(att);
+    console.log(event);
+    linkSection.scrollIntoView({ behavior: 'smooth' });
+  });
+});
 
 // Add class 'active' to section when near top of viewport
 // Set sections as active
@@ -85,15 +99,3 @@ const observer = new IntersectionObserver(callback, options);
 sections.forEach((section) => {
   observer.observe(section);
 });
-
-// Scroll to anchor ID using scrollTO event
-
-/**
- * End Main Functions
- * Begin Events
- *
- */
-
-// Build menu
-
-// Scroll to section on link click
