@@ -23,7 +23,7 @@ app.use(cors());
 app.use(express.static('website'));
 
 // Setup Server
-const port = 8000;
+const port = 8080;
 
 // Spin up the server
 const server = app.listen(port, () => {
@@ -53,7 +53,7 @@ app.post('/postData', (req, res) => {
     feelings: req.body.feelings,
   };
   contentArea.push(newData);
-  console.log(contentArea);
+  //   console.log(contentArea);
   //   projectData = newData;
   res.send(projectData);
 });

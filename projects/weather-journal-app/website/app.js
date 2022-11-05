@@ -27,7 +27,9 @@ btn.addEventListener('click', () => {
         feelings: feelings,
       });
     })
-    .then(updateUI());
+    .then((res) => {
+      updateUI();
+    });
 });
 
 const getData = async (baseURL, zip, apiKey) => {
@@ -41,7 +43,7 @@ const getData = async (baseURL, zip, apiKey) => {
   }
 };
 
-const postData = async (url = '', data = {}) => {
+const postData = async (url = '/postData', data = {}) => {
   const res = await fetch(url, {
     method: 'POST',
     credentials: 'same-origin',
@@ -61,10 +63,11 @@ const postData = async (url = '', data = {}) => {
 const updateUI = async () => {
   const req = await fetch('/all');
   try {
+    f;
     const allData = await req.json();
-    date.innerHTML = allData.date;
-    temp.innerHTML = allData.temp;
-    content.innerHTML = allData.feelings;
+    date.innerText = allData.date;
+    temp.innerText = allData.temp;
+    content.innerText = allData.feelings;
   } catch (error) {
     console.log('error', error);
   }
