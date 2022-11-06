@@ -10,7 +10,8 @@ const date = document.querySelector('#date');
 const temp = document.querySelector('#temp');
 const content = document.querySelector('#content');
 const feelings = document.querySelector('#feelings');
-const trial = 12345; // delete later
+const iconEl = document.getElementById('icon');
+const cityName = document.getElementById('cityName');
 
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -27,6 +28,9 @@ btn.addEventListener('click', () => {
         date: newDate,
         temp: dataApi.main.temp,
         feelings: feelings.value,
+        icon: dataApi.weather[0].icon,
+        name: dataApi.name,
+        country: dataApi.sys.country,
       });
     })
     .then((res) => {
@@ -34,6 +38,7 @@ btn.addEventListener('click', () => {
     });
 });
 
+// Get function
 const getData = async (zip) => {
   const res = await fetch(baseURL + zip + apiKey);
   try {
@@ -45,6 +50,7 @@ const getData = async (zip) => {
   }
 };
 
+// Post function
 const postData = async (url = '/postData', data = {}) => {
   const res = await fetch(url, {
     method: 'POST',
@@ -62,17 +68,18 @@ const postData = async (url = '/postData', data = {}) => {
   }
 };
 
+// Updating UI
 const updateUI = async () => {
   const req = await fetch('/all');
   try {
-    const allData = await req.json();
-    console.log(allData);
-    date.innerText = allData.date;
-    temp.innerText = `${parseInt(allData.temp)}°C`;
-    content.innerText = `I feel ${allData.feelings}`;
-    //     date.innerHTML = `date: ${allData.date}`;
-    //     temp.innerHTML = `temp: ${Math.round(allData.temp)}°C`;
-    //     content.innerHTML = `feelings: ${allData.content}`;
+    const getData = await req.json();
+    console.log(getData);
+    date.innerText = getData.date;
+    temp.innerText = `${parseInt(getData.temp)}°F`;
+    content.innerText = `I feel ${getData.feelings}`;
+    iconEl.src = `http://openweathermap.org/img/wn/${getData.icon}@2x.png`;
+    iconEl.style.display = 'block';
+    cityName.innerHTML = `${getData.name}, ${getData.country}`;
   } catch (error) {
     console.log('error', error);
   }

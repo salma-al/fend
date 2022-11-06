@@ -11,6 +11,10 @@ body {
   /* overflow: hidden; */
 }
 
+#icon {
+  display: none;
+}
+
 #app {
   display: grid;
   grid-auto-rows: minmax(150px, auto);
@@ -66,6 +70,7 @@ input {
 }
 
 button {
+  margin-bottom: 200px;
   width: 400px;
   height: 100px;
   background: #3b4a6b;
