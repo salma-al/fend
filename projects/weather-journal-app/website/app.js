@@ -1,7 +1,7 @@
 // base url
 let baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
 // Personal API Key for OpenWeatherMap API
-let apiKey = '&appid=fac48d14a5f14c4a5fc1d6745ae486b3&units=imperial';
+let apiKey = 'API KEY GOES HERE';
 
 /* Global Variables */
 const zipCode = document.querySelector('#zip');
@@ -74,7 +74,7 @@ const updateUI = async () => {
   try {
     const getData = await req.json();
     console.log(getData);
-    date.innerText = getData.date;
+    date.innerText = `date: ${getData.date}`;
     temp.innerText = `${parseInt(getData.temp)}°F`;
     content.innerText = `I feel ${getData.feelings}`;
     iconEl.src = `http://openweathermap.org/img/wn/${getData.icon}@2x.png`;

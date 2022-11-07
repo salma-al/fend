@@ -23,7 +23,7 @@ app.use(cors());
 app.use(express.static('website'));
 
 // Setup Server
-const port = 8088;
+const port = 5000;
 
 // Spin up the server
 const server = app.listen(port, () => {
