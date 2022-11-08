@@ -1,7 +1,7 @@
 // base url
 let baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
 // Personal API Key for OpenWeatherMap API
-let apiKey = '&appid=fac48d14a5f14c4a5fc1d6745ae486b3&units=imperial';
+let apiKey = '&appid=3c1e232ce8e13cc7c78767df73d1d32c&units=imperial';
 
 /* Global Variables */
 const zipCode = document.querySelector('#zip');
